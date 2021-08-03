@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS moviesdb;
-USE moviesdb;
+CREATE DATABASE IF NOT EXISTS movies_db;
+USE movies_db;
 DROP TABLE IF EXISTS movieobjects;
 CREATE TABLE movieobjects
 (
