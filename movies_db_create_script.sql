@@ -1,7 +1,7 @@
-CREATE DATABASE IF NOT EXISTS movies_db;
+CREATE DATABASE IF NOT EXISTS movies;
 USE movies_db;
-DROP TABLE IF EXISTS movieobjects;
-CREATE TABLE movieobjects
+DROP TABLE IF EXISTS movies;
+CREATE TABLE movies
 (
     id     INT UNSIGNED NOT NULL,
     title  VARCHAR (20) NOT NULL,
