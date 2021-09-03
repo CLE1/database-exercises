@@ -1,26 +1,35 @@
-USE employees;
+use employees;
 
-SELECT first_name, last_name
-FROM employees
-WHERE first_name IN ('Irena', 'Vidya', 'Maya')
-ORDER BY first_name ASC;
+select concat(first_name, ' ', last_name)
+from employees
+where first_name like '%E'
+  and first_name like 'E%'
+order by emp_no desc;
 
-SELECT first_name, last_name
-FROM employees
-WHERE first_name IN ('Irena', 'Vidya', 'Maya')
-ORDER BY first_name ASC, last_name ASC;
+select *
+from employees.employees
+where day(birth_date) = 25
+  and month(birth_date) = 12;
 
-SELECT first_name, last_name
-FROM employees
-WHERE first_name IN ('Irena', 'Vidya', 'Maya')
-ORDER BY last_name ASC, first_name DESC;
+select *
+from employees.employees
+where day(birth_date) = 25
+  and month(birth_date) = 12
+  and year(hire_date) >= 1990
+  and year(hire_date) < 2000;
 
-SELECT last_name, emp_no
-FROM employees
-WHERE last_name LIKE 'E%'
-ORDER BY emp_no ASC;
+select *
+from employees.employees
+where day(birth_date) = 25
+  and month(birth_date) = 12
+  and year(hire_date) >= 1990
+  and year(hire_date) < 2000
+order by birth_date, hire_date desc;
 
-SELECT last_name, emp_no
-FROM employees
-WHERE last_name LIKE 'E%'
-ORDER BY emp_no DESC;
+select *, datediff(curdate(), hire_date)
+from employees.employees
+where day(birth_date) = 25
+  and month(birth_date) = 12
+  and year(hire_date) >= 1990
+  and year(hire_date) < 2000
+order by birth_date, hire_date desc;
